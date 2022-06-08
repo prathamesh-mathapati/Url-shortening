@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title> Shortly URL shortening API Challenge</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+
+  <!-- Primary Meta Tags -->
+  <title>URL shortener</title>
+  <meta name="title" content="URL shortener">
+  <meta name="description" content="URL shortener free for transforming long, ugly links into nice, memorable and trackable short URLs. Use it to shorten links.
+">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metatags.io/">
+  <meta property="og:title" content="URL shortener">
+  <meta property="og:description" content="URL shortener free for transforming long, ugly links into nice, memorable and trackable short URLs. Use it to shorten links.
+">
+  <meta property="og:image" content="https://i.postimg.cc/Tyhh52gv/desktop-design.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://metatags.io/">
+  <meta property="twitter:title" content="URL shortener">
+  <meta property="twitter:description" content="URL shortener free for transforming long, ugly links into nice, memorable and trackable short URLs. Use it to shorten links.
+">
+  <meta property="twitter:image" content="https://i.postimg.cc/Tyhh52gv/desktop-design.jpg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .display-no {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      margin: 0 0;
+
+    }
+
+    .card-1-item:before {
+      content: "";
+      position: absolute;
+      height: 5.5rem;
+      width: 5.5rem;
+      top: 0;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background-color: #3b3054;
+    }
+
+    .rand::before {
+      background-image: url(/images/icon-brand-recognition.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .rand::after {
+      content: "";
+      position: absolute;
+      top: 60%;
+      right: -400px;
+      height: 8px;
+      width: 400px;
+      background-color: #2acfcf;
+      z-index: 0;
+    }
+
+    .card-1 .record::before {
+      background-image: url(/images/icon-detailed-records.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .card-1 .custom::before {
+      background-image: url(/images/icon-fully-customizable.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+
+
+    @media (max-width: 1000px) {
+      .pad {
+        padding: 0rem !important;
+      }
+    }
+
+    @media (max-width: 1100px) {
+
+      .rand::after {
+        content: none !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      div {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body style="font-family: 'Poppins', sans-serif; font-size: 1vw;" class="bg-light">
+
+  <div class="container d-flex flex-column gap-3">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><b>Shortly</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Pricing
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true"> Resources
+              </a>
+            </li>
+          </ul>
+          <form class="d-flex gap-3 ">
+            <button class="btn rounded-pill" type="submit">Login</button>
+
+            <button class="btn rounded-pill text-white" style="background-color: hsl(180, 66%, 49%);" type="submit">
+              Sign
+              Up
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <section class="row flex-wrap-reverse">
+      <div class="col-sm-6">
+        <div class="card-body">
+          <h1 class="card-title " style="font-size: 4rem;"><b> More than just shorter links</b></h1>
+          <p class="card-text text-muted" style="font-size: 1.5rem;">Build your brand’s recognition and
+            get detailed
+            insights on
+            how
+            your links are
+            performing.</p>
+          <a href="#" class="btn rounded-pill text-white" style="background-color: hsl(180, 66%, 49%);"> Get Started</a>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <img class="img-fluid" src="/images/illustration-working.svg" alt="">
+      </div>
+    </section>
+
+
+
+    <section class="input-group mb-3 gap-3 p-4" style="background-color: hsl(257, 27%, 26%);">
+      <input type="url" class="form-control input-value" placeholder="  Shorten a link here..."
+        aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <span class=" btn text-white rounded" onclick="input_group()" id="basic-addon2"
+        style="background-color: hsl(180, 66%, 49%);">Shorten
+        It!</span>
+    </section>
+    <section class="display-no display-err"></section>
+
+    <section class=" display-url display-no">
+
+      <!-- <span>2345</span>
+      <span class="d-flex gap-5">
+        <p>45</p>
+        <a href="" class="btn  rounded" style="background-color: hsl(180, 66%, 49%);">copy</a>
+      </span> -->
+
+    </section>
+
+    <section class=" text-center ">
+      <div class="card-body pad " style="padding: 0rem 18rem;">
+        <h1 class="card-title"> <b>Advanced Statistics</b> </h1>
+        <p class="card-text text-muted w-5">Track how your links are performing across the web
+          with our
+          advanced statistics dashboard.</p>
+      </div>
+    </section>
+
+    <div class="card-1 mt-5 d-flex justify-content-center align-content-start flex-wrap ">
+      <div class="rand card-1-item " style="padding: 4.5rem 1.8rem 2.5rem;
+      background-color: white;
+      border-radius: 5px;
+      max-width: 335px;
+      position: relative;
+">
+        <h3><b>Brand Recognition</b></h3>
+        <p>
+          Boost your brand recognition with each click. Generic links don’t
+          mean a thing. Branded links help instil confidence in your
+          content.
+        </p>
+      </div>
+      <div class="record card-1-item" style="padding: 4.5rem 1.8rem 2.5rem;
+      background-color: white;
+      border-radius: 5px;
+      max-width: 335px;
+      position: relative;
+      margin: 2.5rem 2rem 0;
+
+">
+        <h3><b>Detailed Records</b> </h3>
+        <p>
+          Gain insights into who is clicking your links. Knowing when and
+          where people engage with your content helps inform better
+          decisions.
+        </p>
+      </div>
+      <div class="custom card-1-item " style="padding: 4.5rem 1.8rem 2.5rem;
+      background-color: white;
+      border-radius: 5px;
+      max-width: 335px;
+      position: relative;
+      margin-top: 6rem;
+  
+
+">
+        <h3><b>Fully Customizable</b></h3>
+        <p>
+          Improve brand awareness and content discoverability through
+          customizable links, supercharging audience engagement.
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <section class=" text-center p-3 mt-5"
+      style='background-image: url(./images/bg-shorten-desktop.svg); background-color: rgb(58, 4, 109);'>
+      <h3 class="card-title pb-4 text-white"> <b>Boost your links today</b> </h1>
+        <a href="" class="btn btn rounded-pill text-white" style="background-color: hsl(180, 66%, 49%);">Get Started</a>
+    </section>
+
+
+
+    <footer class="flex-wrap text-white d-flex justify-content-around " style="background-color: hsl(260, 8%, 14%); ">
+      <a class="navbar-brand text-white p-5" href="#"><b>Shortly</b></a>
+      <div class="d-flex gap-3 flex-wrap justify-content-center align-content-center"
+        style="font-family: 'Poppins', sans-serif;">
+        <span class="p-5">
+          <h4> <b>Features</b> </h4>
+          <p> Link Shortening</p>
+          <p>Branded Links</p>
+          <p>Analytics</p>
+        </span>
+
+        <span class="p-5">
+          <h4> <b>Resources</b> </h4>
+          <p> Blog</p>
+          <p>Developers</p>
+          <p>Support</p>
+        </span>
+
+        <span class="p-5">
+          <h4> <b>Company</b> </h4>
+          <p> About</p>
+          <p>Our Team</p>
+          <p>Contact</p>
+        </span>
+
+
+
+
+      </div>
+      <div class=" d-flex  align-items-start gap-3 p-5">
+        <img class="img-fluid" src="/images/icon-facebook.svg" alt="">
+        <img class="img-fluid" src="/images/icon-twitter.svg" alt="">
+        <img class="img-fluid" src="/images/icon-pinterest.svg" alt="">
+        <img class="img-fluid" src="/images/icon-instagram.svg" alt="">
+
+      </div>
+
+
+
+    </footer>
+</body>
+
+<script>
+
+  "use script";
+  let input_val = document.querySelector('.input-value')
+  let Alldata = []
+
+  let localData = localStorage.getItem("url")
+  if (JSON.parse(localData) !== null) {
+
+    document.querySelector('.display-url').classList.remove('display-no')
+    Alldata.push(...JSON.parse(localData))
+    // console.log(Alldata);
+    Alldata.map(item => {
+      document.querySelector('.display-url').innerHTML +=
+        `
+          <div class="d-flex fs-6 justify-content-between shadow-lg p-3 mb-5 bg-body rounded">
+            <span>${item.url}</span>
+          <span class="d-flex gap-5">
+            <a style='text-decoration: none; text-color: hsl(180, 66%, 49%);'  href="${item.short_url}" target="_blank">${item.short_url}</a>
+
+            <a href="${item.short_url}" target="_blank" class="btn btn-info text-light rounded" style="text-color:#1111;">copy</a>
+          </span> 
+
+    </div>
+
+    `
+
+
+
+
+    }
+    )
+
+  }
+
+
+
+  // console.log(input_val.value);
+
+  const input_group = async () => {
+    // console.log('you ertyhjk');
+
+    let res_ = input_val.value.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+    console.log(Alldata);
+    if (res_ != null) {
+
+
+      document.querySelector('.display-err').classList.add('display-no')
+      const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${input_val.value}`);
+      let data = await response.json();
+      console.log(data);
+      Alldata.push({ 'url': input_val.value, 'short_url': data.result.full_short_link })
+      localStorage.setItem(`url`, JSON.stringify(Alldata))
+
+
+      document.querySelector('.display-url').classList.remove('display-no')
+      document.querySelector('.display-url').innerHTML += `
+          <div class="d-flex fs-6 justify-content-between shadow-lg p-3 mb-5 bg-body rounded">
+            <span>${input_val.value}</span>
+          <span class="d-flex gap-5">
+            <a style='text-decoration: none; text-color: hsl(180, 66%, 49%);'  href="${data.result.full_short_link}" target="_blank">${data.result.full_short_link}</a>
+
+            <a href="${data.result.full_short_link}" target="_blank" class="btn btn-info text-light rounded" style="text-color:#1111;">copy</a>
+          </span> 
+
+    </div>
+
+    `
+      return true;
+    } else {
+      document.querySelector('.display-err').classList.remove('display-no')
+
+      document.querySelector('.display-err').innerHTML = '<p style="color: red;">Url is Invalid</p>'
+      console.log('you kfds');
+
+    }
+
+  }
+
+</script>
+
+
+</html>
