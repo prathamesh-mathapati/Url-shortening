@@ -48,14 +48,7 @@
       padding: 0;
     }
 
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
 
     .display-no {
       position: absolute;
@@ -124,6 +117,19 @@
       div {
         font-size: 1rem;
       }
+    }
+
+
+    @media (max-width: 460px) {
+      .data {
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .dada {
+        flex-direction: column;
+      }
+
     }
   </style>
 </head>
@@ -294,7 +300,7 @@
           <p>Support</p>
         </span>
 
-        <span class="p-5">
+        <span class="p-5 ">
           <h4> <b>Company</b> </h4>
           <p> About</p>
           <p>Our Team</p>
@@ -305,7 +311,7 @@
 
 
       </div>
-      <div class=" d-flex  align-items-start gap-3 p-5">
+      <div class=" d-flex    align-items-start gap-3 p-5">
         <img class="img-fluid" src="/images/icon-facebook.svg" alt="">
         <img class="img-fluid" src="/images/icon-twitter.svg" alt="">
         <img class="img-fluid" src="/images/icon-pinterest.svg" alt="">
@@ -329,25 +335,20 @@
 
     document.querySelector('.display-url').classList.remove('display-no')
     Alldata.push(...JSON.parse(localData))
-    // console.log(Alldata);
     Alldata.map(item => {
       document.querySelector('.display-url').innerHTML +=
         `
-          <div class="d-flex fs-6 justify-content-between shadow-lg p-3 mb-5 bg-body rounded">
+          <div class="d-flex data fs-6 justify-content-between shadow-lg p-3 mb-5 bg-body rounded">
             <span>${item.url}</span>
-          <span class="d-flex gap-5">
+          <span class="d-flex dada gap-lg-4">
             <a style='text-decoration: none; text-color: hsl(180, 66%, 49%);'  href="${item.short_url}" target="_blank">${item.short_url}</a>
 
-            <a href="${item.short_url}" target="_blank" class="btn btn-info text-light rounded" style="text-color:#1111;">copy</a>
+            <a href="${item.short_url}" target="_blank" class="btn btn-info text-light rounded " style="text-color:#1111;">copy</a>
           </span> 
 
     </div>
 
     `
-
-
-
-
     }
     )
 
@@ -375,17 +376,17 @@
 
       document.querySelector('.display-url').classList.remove('display-no')
       document.querySelector('.display-url').innerHTML += `
-          <div class="d-flex fs-6 justify-content-between shadow-lg p-3 mb-5 bg-body rounded">
+          <div class="d-flex data fs-6 justify-content-between shadow-lg p-3 mb-5 bg-body rounded">
             <span>${input_val.value}</span>
-          <span class="d-flex gap-5">
+          <span class="d-flex dada gap-lg-4">
             <a style='text-decoration: none; text-color: hsl(180, 66%, 49%);'  href="${data.result.full_short_link}" target="_blank">${data.result.full_short_link}</a>
 
-            <a href="${data.result.full_short_link}" target="_blank" class="btn btn-info text-light rounded" style="text-color:#1111;">copy</a>
+            <a href="${data.result.full_short_link}" target="_blank" class="btn btn-info text-light rounded " style="text-color:#1111;">copy</a>
           </span> 
 
     </div>
+`
 
-    `
       return true;
     } else {
       document.querySelector('.display-err').classList.remove('display-no')
