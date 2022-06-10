@@ -117,9 +117,32 @@
       }
     }
 
+    @media (max-width: 418px) {
+
+      .font {
+        font-size: 2.5rem !important;
+      }
+
+      .font-1 {
+        font-size: 80% !important;
+      }
+    }
+
+
     @media (max-width: 900px) {
       div {
         font-size: 1rem;
+      }
+
+      .nav-co {
+        border-radius: 17px !important;
+        background-color: black;
+        color: white !important;
+      }
+
+      .f {
+        flex-direction: column;
+        margin: 1rem;
       }
     }
 
@@ -146,39 +169,38 @@
       .margin-sm {
         margin-left: 30%;
       }
-
-
     }
   </style>
 </head>
 
 <body style="font-family: 'Poppins', sans-serif; font-size: 1vw;" class="bg-light">
 
-  <nav class="navbar navbar-expand-lg navbar-light position-fixed  bg-white " style="width: 100%; z-index: 100;">
+  <nav class="navbar navbar-expand-lg  navbar-light position-fixed  bg-white  " style="width: 100%; z-index: 100;">
     <div class="container">
       <a class="navbar-brand" href="#"><b>Shortly</b></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+      <button class="navbar-toggler my-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo02">
+      <div class="collapse navbar-collapse text-center nav-co rounded " id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">Features</a>
+            <a class="nav-link nav-co" aria-current="page" href="#">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"> Pricing
+            <a class="nav-link nav-co" href="#"> Pricing
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true"> Resources
+            <a class="nav-link nav-co" href="#" tabindex="-1" aria-disabled="true"> Resources
             </a>
           </li>
         </ul>
-        <form class="d-flex gap-3 justify-content-center">
-          <button class="btn rounded-pill" type="submit">Login</button>
+        <form class="d-flex gap-3 f justify-content-center">
+          <button class="btn rounded-pill nav-co" type="submit">Login</button>
 
-          <button class="btn rounded-pill text-white" style="background-color: hsl(180, 66%, 49%);" type="submit">
+          <button class="btn rounded-pill text-white m-md-3 m-sm-0 m-lg-0" style="background-color: hsl(180, 66%, 49%);"
+            type="submit">
             Sign
             Up
           </button>
@@ -193,8 +215,10 @@
     <section class="row flex-wrap-reverse " style="margin-top: 5rem;">
       <div class="col-sm-6">
         <div class="card-body ">
-          <h1 class="card-title center" style="font-size: 4rem;"><b> More than just shorter links</b></h1>
-          <p class="card-text text-muted center" style="font-size: 1.5rem;">Build your brand’s recognition and
+          <h1 class="card-title center font" style="font-size: 4rem;"><b style="font-size:smaller;"> More than just
+              shorter
+              links</b></h1>
+          <p class="card-text text-muted center font-1" style="font-size: 1.5rem;">Build your brand’s recognition and
             get detailed
             insights on
             how
@@ -223,9 +247,9 @@
 
 
 
-    <section class="display-no display-err"></section>
+    <section class="display-no  display-err"></section>
 
-    <section class=" display-url display-no">
+    <section class=" display-url px-2 display-no">
 
     </section>
 
@@ -357,7 +381,7 @@
         `
         <div class="row align-items-center fs-6  shadow-lg p-3 mb-4  bg-body  overflow-hidden ">
       <span class="col-lg-8 col-sm-12 ">${item.url}</span>
-      <span class="col-lg-4 col-sm-12  d-flex flex-sm-row flex-column justify-content-between">
+      <span class="col-lg-4 col-sm-12 align-items-center d-flex flex-sm-row flex-column justify-content-between">
         <a href="${item.short_url}" class="" target="_blank">${item.short_url}</a>
         <a href="${item.short_url}" target="_blank" class="m-1 btn btn-info text-light rounded ">copy</a>
       </span>
@@ -392,7 +416,7 @@
       document.querySelector('.display-url').innerHTML += `
       <div class="row  align-items-center fs-6  shadow-lg p-3 mb-5 bg-body  overflow-hidden ">
       <span class="col-lg-8 col-sm-12 m-1">${input_val.value}</span>
-      <span class="col-lg-4 col-sm-12 m-1 d-flex flex-sm-row flex-column justify-content-between">
+      <span class="col-lg-4 col-sm-12 align-items-center m-1 d-flex flex-sm-row flex-column justify-content-between">
         <a href="${data.result.full_short_link}" class="m-1" target="_blank">${data.result.full_short_link}</a>
         <a href="${data.result.full_short_link}" target="_blank" class="m-1 btn btn-info text-light rounded ">copy</a>
       </span>
