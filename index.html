@@ -155,7 +155,7 @@
 <body style="font-family: 'Poppins', sans-serif; font-size: 1vw;" class="bg-light">
 
   <nav class="navbar navbar-expand-lg navbar-light position-fixed  bg-white " style="width: 100%; z-index: 100;">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand" href="#"><b>Shortly</b></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -190,7 +190,7 @@
 
 
 
-    <section class="row flex-wrap-reverse mt-5">
+    <section class="row flex-wrap-reverse " style="margin-top: 5rem;">
       <div class="col-sm-6">
         <div class="card-body ">
           <h1 class="card-title center" style="font-size: 4rem;"><b> More than just shorter links</b></h1>
@@ -288,7 +288,7 @@
 
   <footer>
 
-    <section class="text-center   p-5 mt-5"
+    <section class="text-center    p-5 mt-5"
       style='background-image: url(./images/bg-boost-desktop.svg); background-color: rgb(58, 4, 109);'>
       <h3 class="card-title  text-white"> <b>Boost your links today</b> </h1>
         <a href="" class="btn btn rounded-pill text-white px-5" style="background-color: hsl(180, 66%, 49%);">Get
@@ -296,7 +296,7 @@
     </section>
 
 
-    <div class="flex-wrap text-white d-flex justify-content-around  " style="background-color: hsl(260, 8%, 14%); ">
+    <div class="flex-wrap  text-white d-flex justify-content-around  " style="background-color: hsl(260, 8%, 14%); ">
       <a class="navbar-brand text-white p-5 hoverF" href="#"><b>Shortly</b></a>
       <div class="d-flex gap-3 flex-wrap justify-content-center align-content-center"
         style="font-family: 'Poppins', sans-serif;">
@@ -355,10 +355,10 @@
     Alldata.map(item => {
       document.querySelector('.display-url').innerHTML +=
         `
-        <div class="row  fs-6  shadow-lg p-3 mb-5 bg-body  overflow-hidden ">
+        <div class="row align-items-center fs-6  shadow-lg p-3 mb-4  bg-body  overflow-hidden ">
       <span class="col-lg-8 col-sm-12 ">${item.url}</span>
       <span class="col-lg-4 col-sm-12  d-flex flex-sm-row flex-column justify-content-between">
-        <a href="${item.short_url}" class="m-1" target="_blank">${item.short_url}</a>
+        <a href="${item.short_url}" class="" target="_blank">${item.short_url}</a>
         <a href="${item.short_url}" target="_blank" class="m-1 btn btn-info text-light rounded ">copy</a>
       </span>
     </div>
@@ -390,7 +390,7 @@
 
       document.querySelector('.display-url').classList.remove('display-no')
       document.querySelector('.display-url').innerHTML += `
-      <div class="row  fs-6  shadow-lg p-3 mb-5 bg-body  overflow-hidden ">
+      <div class="row  align-items-center fs-6  shadow-lg p-3 mb-5 bg-body  overflow-hidden ">
       <span class="col-lg-8 col-sm-12 m-1">${input_val.value}</span>
       <span class="col-lg-4 col-sm-12 m-1 d-flex flex-sm-row flex-column justify-content-between">
         <a href="${data.result.full_short_link}" class="m-1" target="_blank">${data.result.full_short_link}</a>
