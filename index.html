@@ -98,6 +98,10 @@
       background-position: center;
     }
 
+    .hoverF:hover {
+      color: #2acfcf;
+    }
+
 
 
     @media (max-width: 1000px) {
@@ -120,7 +124,7 @@
     }
 
 
-    @media (max-width: 460px) {
+    @media (max-width: 600px) {
       .data {
         align-items: center;
         flex-wrap: wrap;
@@ -130,59 +134,75 @@
         flex-direction: column;
       }
 
+      .card-1-item:before {
+        left: 6rem;
+      }
+
+      .center {
+        /* align-items: center; */
+        text-align: center;
+      }
+
+      .margin-sm {
+        margin-left: 30%;
+      }
+
+
     }
   </style>
 </head>
 
 <body style="font-family: 'Poppins', sans-serif; font-size: 1vw;" class="bg-light">
 
-  <div class="container d-flex flex-column gap-3">
-    <nav class="navbar navbar-expand-lg navbar-light position-fixed  bg-white " style="width: 85%;">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><b>Shortly</b></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link " aria-current="page" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"> Pricing
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true"> Resources
-              </a>
-            </li>
-          </ul>
-          <form class="d-flex gap-3 ">
-            <button class="btn rounded-pill" type="submit">Login</button>
+  <nav class="navbar navbar-expand-lg navbar-light position-fixed  bg-white " style="width: 100%; z-index: 100;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><b>Shortly</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Pricing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true"> Resources
+            </a>
+          </li>
+        </ul>
+        <form class="d-flex gap-3 justify-content-center">
+          <button class="btn rounded-pill" type="submit">Login</button>
 
-            <button class="btn rounded-pill text-white" style="background-color: hsl(180, 66%, 49%);" type="submit">
-              Sign
-              Up
-            </button>
-          </form>
-        </div>
+          <button class="btn rounded-pill text-white" style="background-color: hsl(180, 66%, 49%);" type="submit">
+            Sign
+            Up
+          </button>
+        </form>
       </div>
-    </nav>
+    </div>
+  </nav>
+  <div class="container d-flex flex-column gap-3">
 
 
 
     <section class="row flex-wrap-reverse mt-5">
       <div class="col-sm-6">
-        <div class="card-body">
-          <h1 class="card-title " style="font-size: 4rem;"><b> More than just shorter links</b></h1>
-          <p class="card-text text-muted" style="font-size: 1.5rem;">Build your brand’s recognition and
+        <div class="card-body ">
+          <h1 class="card-title center" style="font-size: 4rem;"><b> More than just shorter links</b></h1>
+          <p class="card-text text-muted center" style="font-size: 1.5rem;">Build your brand’s recognition and
             get detailed
             insights on
             how
             your links are
             performing.</p>
-          <a href="#" class="btn rounded-pill text-white" style="background-color: hsl(180, 66%, 49%);"> Get Started</a>
+          <a href="#" class="btn margin-sm rounded-pill text-white" style="background-color: hsl(180, 66%, 49%);">
+            Get
+            Started</a>
         </div>
       </div>
       <div class="col-sm-6">
@@ -192,22 +212,20 @@
 
 
 
-    <section class="input-group mb-3 gap-3 p-4" style="background-color: hsl(257, 27%, 26%);">
-      <input type="url" class="form-control input-value" placeholder="Shorten a link here..."
+    <section class="input-group mb-3 gap-3 p-5 "
+      style="background-color: hsl(257, 27%, 26%); background-image: url(./images/bg-shorten-desktop.svg);">
+      <input type="url" class="form-control input-value p-2" placeholder="Shorten a link here..."
         aria-label="Recipient's username" aria-describedby="basic-addon2">
       <span class=" btn text-white rounded" onclick="input_group()" id="basic-addon2"
         style="background-color: hsl(180, 66%, 49%);">Shorten
         It!</span>
     </section>
+
+
+
     <section class="display-no display-err"></section>
 
     <section class=" display-url display-no">
-
-      <!-- <span>2345</span>
-      <span class="d-flex gap-5">
-        <p>45</p>
-        <a href="" class="btn  rounded" style="background-color: hsl(180, 66%, 49%);">copy</a>
-      </span> -->
 
     </section>
 
@@ -221,7 +239,7 @@
     </section>
 
     <div class="card-1 mt-5 d-flex justify-content-center align-content-start flex-wrap ">
-      <div class="rand card-1-item " style="padding: 4.5rem 1.8rem 2.5rem;
+      <div class=" h-25 rand card-1-item " style="padding: 4.5rem 1.8rem 2.5rem;
       background-color: white;
       border-radius: 5px;
       max-width: 335px;
@@ -234,7 +252,7 @@
           content.
         </p>
       </div>
-      <div class="record card-1-item" style="padding: 4.5rem 1.8rem 2.5rem;
+      <div class=" h-25 record card-1-item" style="padding: 4.5rem 1.8rem 2.5rem;
       background-color: white;
       border-radius: 5px;
       max-width: 335px;
@@ -249,7 +267,7 @@
           decisions.
         </p>
       </div>
-      <div class="custom card-1-item " style="padding: 4.5rem 1.8rem 2.5rem;
+      <div class="h-25 custom card-1-item " style="padding: 4.5rem 1.8rem 2.5rem;
       background-color: white;
       border-radius: 5px;
       max-width: 335px;
@@ -265,46 +283,42 @@
         </p>
       </div>
     </div>
+  </div>
 
 
+  <footer>
 
-
-
-
-
-
-
-    <section class=" text-center p-3 mt-5"
-      style='background-image: url(./images/bg-shorten-desktop.svg); background-color: rgb(58, 4, 109);'>
-      <h3 class="card-title pb-4 text-white"> <b>Boost your links today</b> </h1>
-        <a href="" class="btn btn rounded-pill text-white" style="background-color: hsl(180, 66%, 49%);">Get Started</a>
+    <section class="text-center   p-5 mt-5"
+      style='background-image: url(./images/bg-boost-desktop.svg); background-color: rgb(58, 4, 109);'>
+      <h3 class="card-title  text-white"> <b>Boost your links today</b> </h1>
+        <a href="" class="btn btn rounded-pill text-white px-5" style="background-color: hsl(180, 66%, 49%);">Get
+          Started</a>
     </section>
 
 
-
-    <footer class="flex-wrap text-white d-flex justify-content-around " style="background-color: hsl(260, 8%, 14%); ">
-      <a class="navbar-brand text-white p-5" href="#"><b>Shortly</b></a>
+    <div class="flex-wrap text-white d-flex justify-content-around  " style="background-color: hsl(260, 8%, 14%); ">
+      <a class="navbar-brand text-white p-5 hoverF" href="#"><b>Shortly</b></a>
       <div class="d-flex gap-3 flex-wrap justify-content-center align-content-center"
         style="font-family: 'Poppins', sans-serif;">
-        <span class="p-5" style=" cursor: pointer;">
-          <h4> <b>Features</b> </h4>
-          <p> Link Shortening</p>
-          <p>Branded Links</p>
-          <p>Analytics</p>
+        <span class="p-5 align-content-center text-center" style=" cursor: pointer;">
+          <h4 class="hoverF"> <b>Features</b> </h4>
+          <p class="hoverF"> Link Shortening</p>
+          <p class="hoverF">Branded Links</p>
+          <p class="hoverF">Analytics</p>
         </span>
 
-        <span class="p-5" style=" cursor: pointer;">
-          <h4> <b>Resources</b> </h4>
-          <p> Blog</p>
-          <p>Developers</p>
-          <p>Support</p>
+        <span class="p-5 text-center" style=" cursor: pointer;">
+          <h4 class="hoverF"> <b>Resources</b> </h4>
+          <p class="hoverF"> Blog</p>
+          <p class="hoverF">Developers</p>
+          <p class="hoverF"> Support</p>
         </span>
 
-        <span class="p-5 " style=" cursor: pointer;">
-          <h4> <b>Company</b> </h4>
-          <p> About</p>
-          <p>Our Team</p>
-          <p>Contact</p>
+        <span class="p-5 text-center" style=" cursor: pointer;">
+          <h4 class="hoverF"> <b>Company</b> </h4>
+          <p class="hoverF"> About</p>
+          <p class="hoverF">Our Team</p>
+          <p class="hoverF">Contact</p>
         </span>
 
 
@@ -321,7 +335,10 @@
 
 
 
-    </footer>
+
+    </div>
+
+  </footer>
 </body>
 
 <script>
@@ -338,15 +355,14 @@
     Alldata.map(item => {
       document.querySelector('.display-url').innerHTML +=
         `
-          <div class="d-flex data fs-6 justify-content-between shadow-lg p-3 mb-5 bg-body rounded">
-            <span>${item.url}</span>
-          <span class="d-flex dada gap-lg-4">
-            <a style='text-decoration: none; text-color: hsl(180, 66%, 49%);'  href="${item.short_url}" target="_blank">${item.short_url}</a>
-
-            <a href="${item.short_url}" target="_blank" class="btn btn-info text-light rounded " style="text-color:#1111;">copy</a>
-          </span> 
-
+        <div class="row  fs-6  shadow-lg p-3 mb-5 bg-body  overflow-hidden ">
+      <span class="col-lg-8 col-sm-12 ">${item.url}</span>
+      <span class="col-lg-4 col-sm-12  d-flex flex-sm-row flex-column justify-content-between">
+        <a href="${item.short_url}" class="m-1" target="_blank">${item.short_url}</a>
+        <a href="${item.short_url}" target="_blank" class="m-1 btn btn-info text-light rounded ">copy</a>
+      </span>
     </div>
+
 
     `
     }
@@ -356,10 +372,8 @@
 
 
 
-  // console.log(input_val.value);
 
   const input_group = async () => {
-    // console.log('you ertyhjk');
 
     let res_ = input_val.value.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
     console.log(Alldata);
@@ -376,14 +390,12 @@
 
       document.querySelector('.display-url').classList.remove('display-no')
       document.querySelector('.display-url').innerHTML += `
-          <div class="d-flex data fs-6 justify-content-between shadow-lg p-3 mb-5 bg-body rounded">
-            <span>${input_val.value}</span>
-          <span class="d-flex dada gap-lg-4">
-            <a style='text-decoration: none; text-color: hsl(180, 66%, 49%);'  href="${data.result.full_short_link}" target="_blank">${data.result.full_short_link}</a>
-
-            <a href="${data.result.full_short_link}" target="_blank" class="btn btn-info text-light rounded " style="text-color:#1111;">copy</a>
-          </span> 
-
+      <div class="row  fs-6  shadow-lg p-3 mb-5 bg-body  overflow-hidden ">
+      <span class="col-lg-8 col-sm-12 m-1">${input_val.value}</span>
+      <span class="col-lg-4 col-sm-12 m-1 d-flex flex-sm-row flex-column justify-content-between">
+        <a href="${data.result.full_short_link}" class="m-1" target="_blank">${data.result.full_short_link}</a>
+        <a href="${data.result.full_short_link}" target="_blank" class="m-1 btn btn-info text-light rounded ">copy</a>
+      </span>
     </div>
 `
 
