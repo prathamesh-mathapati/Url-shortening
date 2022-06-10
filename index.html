@@ -315,7 +315,7 @@
     <section class="text-center    p-5 mt-5"
       style='background-image: url(./images/bg-boost-desktop.svg); background-color: rgb(58, 4, 109);'>
       <h3 class="card-title  text-white"> <b>Boost your links today</b> </h1>
-        <a href="" class="btn btn rounded-pill text-white px-5" style="background-color: hsl(180, 66%, 49%);">Get
+        <a href="" class="btn btn rounded-pill text-white px-5 " style="background-color: hsl(180, 66%, 49%);">Get
           Started</a>
     </section>
 
@@ -414,13 +414,14 @@
 
       document.querySelector('.display-url').classList.remove('display-no')
       document.querySelector('.display-url').innerHTML += `
-      <div class="row  align-items-center fs-6  shadow-lg p-3 mb-5 bg-body  overflow-hidden ">
-      <span class="col-lg-8 col-sm-12 m-1">${input_val.value}</span>
-      <span class="col-lg-4 col-sm-12 align-items-center m-1 d-flex flex-sm-row flex-column justify-content-between">
-        <a href="${data.result.full_short_link}" class="m-1" target="_blank">${data.result.full_short_link}</a>
+      <div class="row align-items-center fs-6  shadow-lg p-3 mb-4 flex-nowrap  bg-body  overflow-hidden ">
+      <span class="col-lg-8 col-sm-12 ">${input_val.value}</span>
+      <span class="col-lg-4 col-sm-12 align-items-center d-flex flex-sm-row flex-column justify-content-between">
+        <a href="${data.result.full_short_link}" class="" target="_blank">${data.result.full_short_link}</a>
         <a href="${data.result.full_short_link}" target="_blank" class="m-1 btn btn-info text-light rounded ">copy</a>
       </span>
     </div>
+
 `
 
       return true;
